@@ -1,0 +1,21 @@
+includes/modules/sideboxes/my_categories.php
+PHP Code:
+<?php
+    require($template->get_template_dir('tpl_categories.php',DIR_WS_TEMPLATE, $current_page_base,'sideboxes'). '/tpl_my_categories.php');
+
+    $title = 'Simple Categories Tree Demo';
+    $title_link = false;
+
+    require($template->get_template_dir($column_box_default, DIR_WS_TEMPLATE, $current_page_base,'common') . '/' . $column_box_default);
+
+?>
+
+includes/templates/template_default/sideboxes/tpl_my_categories.php
+PHP Code:
+<?php
+$content = '';
+$content .= $_SESSION['category_tree']->build_category_string('ul', 'li', '', 0, 2);
+?>
+
+
+Simple? No? I created that in 5 mins.
